@@ -1,0 +1,16 @@
+version: "3.8"  # Docker Compose file format version
+
+services:
+  portainer:
+    image: portainer/portainer-ce:linux-arm  # Portainer Community Edition image for ARM (Raspberry Pi)
+    container_name: portainer                # Name of the container
+    restart: always                          # Always restart unless explicitly stopped
+    ports:
+      - "9000:9000"                          # Map port 9000 on host to 9000 in container
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  # Gives Portainer access to Docker on the host
+      - portainer_data:/data                      # Persistent storage for Portainer's data
+
+# Define a named volume to persist Portainer data across container restarts/removals
+volumes:
+  portainer_data:
