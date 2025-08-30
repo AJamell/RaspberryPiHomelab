@@ -15,7 +15,7 @@ To set up the Raspberry Pi, you’ll first need to install the OS using `Raspber
 ## Installing Git 
 Git allows you to clone, manage, and version control projects on your `Raspberry Pi`
 
-* `sudo apt update && sudo apt upgrade -y` to update packages 
+* `sudo apt update` to update
 * `sudo apt install git -y` 
 * `git --version` to verify git was installed
 
