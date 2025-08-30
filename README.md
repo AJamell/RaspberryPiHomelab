@@ -30,16 +30,26 @@ Docker allows you to manage containers, images for a homelab environment
 Portainer is a web interface for your `Raspberry Pi` for managing your docker containers 
 
 * `git clone github.com/AJamell/RaspberryPiHomelab.git`
-* `cd RaspberryPiHomelab/portainer` change destaintion to git folder
-* `docker compose up -d` docker will run portainer on port 9000
+* `cd RaspberryPiHomelab/portainer` change directory to git folder
+* Change configurations of **Docker Compose** file to edit ports, data folders, env variables, etc 
+* `docker compose up -d` docker compose file will run 
 * `docker ps` to check running containers
-* run `http://<hostname>.local:9000` to check portainer running on port 9000
+* Run `http://<hostname>.local:<port>` to check if portainer is running 
+
+## Installing Navidrome
+Navidrome hosts your very own music library
+
+* `cd RaspberryPiHomelab/navidrome` change directory to navidrome folder
+* Change configurations of **Docker Compose** file to edit ports, music folders, env variables, etc
+* Move music mp3 file to your music folder for testing
+* `docker compose up -d` run navidrome through docker compose 
+* Run `http://<hostname>.local:<port>` to check navidrome is running
 
 ## Sources
 
 * [Docker And Portainer Install](https://youtu.be/O7G3oatg5DA?si=BBOGb8YrGyLZ_qUL) <br>
 * [Image Raspberry Pi](https://www.youtube.com/watch?v=sq5S1MM2Pmo&t=43s)
-
+* [Music Copyright](https://youtu.be/80xoyPca3zI?si=HOxbp_jP-HgiZFi7)
 
 
 
