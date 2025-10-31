@@ -23,13 +23,14 @@ Git allows you to clone, manage, and version control projects on your `Raspberry
 Docker allows you to manage containers, images for a homelab environment 
 
 * `curl -sSL https://get.docker.com | sh`
-* `sudo usermod -aG docker <username>` add user to docker group
 * `docker --version` to verify docker was installed
+* `sudo usermod -aG docker <username>` add user to docker group
+
 
 ## Installing Portainer 
 Portainer is a web interface for your `Raspberry Pi` for managing your docker containers 
 
-* `git clone github.com/AJamell/RaspberryPiHomelab.git`
+* `git clone https://github.com/AJamell/RaspberryPiHomelab.git`
 * `cd RaspberryPiHomelab/portainer` change directory to git folder
 * Change configurations of **Docker Compose** file to edit ports, data folders, env variables, etc 
 * `docker compose up -d` docker compose file will run 
