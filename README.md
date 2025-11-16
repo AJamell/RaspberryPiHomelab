@@ -25,6 +25,7 @@ Docker allows you to manage containers, images for a homelab environment
 * `curl -sSL https://get.docker.com | sh`
 * `docker --version` to verify docker was installed
 * `sudo usermod -aG docker <username>` add user to docker group
+* `sudo reboot` to reboot the system to apply changes
 
 
 ## Installing Portainer 
@@ -37,17 +38,25 @@ Portainer is a web interface for your `Raspberry Pi` for managing your docker co
 * `docker ps` to check running containers
 * Run `http://<hostname>.local:<port>` to check if portainer is running 
 
-## Installing Navidrome
-Navidrome hosts your very own music library
+## Installing Navidrome && Filebrowser
+Navidrome hosts your very own music library and Filebrowser uploads music to your Navidrome folder
 
+* First create folders for navidrome and filebrowser for music storage 
+
+```bash 
+sudo mkdir -p ~/RaspberryPiHomelab/navidrome/{data,music,filebrowser_db}
+sudo chown -R $USER:$USER ~/RaspberryPiHomelab
+sudo chmod -R 775 ~/RaspberryPiHomelab
+```
 * `cd RaspberryPiHomelab/navidrome` change directory to navidrome folder
 * Change configurations of **Docker Compose** file to edit ports, music folders, env variables, etc
 * Move music mp3 file to your music folder for testing
-* `docker compose up -d` run navidrome through docker compose 
-* Run `http://<hostname>.local:<port>` to check navidrome is running
+* `docker compose up -d` run navidrome and filebrowser through docker compose 
+* Run `http://<hostname>.local:<port>` to check navidrome/filebrowser is running
+* Run `docker ps` or `docker logs <container_id>` to check debug containers
+* Run `docker logs filebrowser` to check your admin password to login to filebrowser
 
 ## Sources
-
 * [Docker And Portainer Install](https://youtu.be/O7G3oatg5DA?si=BBOGb8YrGyLZ_qUL) <br>
 * [Image Raspberry Pi](https://www.youtube.com/watch?v=sq5S1MM2Pmo&t=43s)
 * [Music Copyright](https://youtu.be/80xoyPca3zI?si=HOxbp_jP-HgiZFi7)
