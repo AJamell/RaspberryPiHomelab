@@ -1,0 +1,15 @@
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/homarr-labs/homarr:latest
+    restart: unless-stopped
+    volumes:
+      # Optional: Allows Homarr to show status of your other containers
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Your persistent data (configs, DB, etc.)
+      - ./homarr/appdata:/appdata
+    environment:
+      # REQUIRED: Generate a random 64-char hex string (see below)
+      - SECRET_ENCRYPTION_KEY=<key>
+    ports:
+      - '7575:7575'

@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: portainer/portainer-ce:linux-arm  # Portainer Community Edition image for ARM (Raspberry Pi)
+    image: portainer/portainer-ce:latest
     container_name: portainer                # Name of the container
     restart: always                          # Always restart unless explicitly stopped
     ports:

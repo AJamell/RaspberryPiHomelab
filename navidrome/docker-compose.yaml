@@ -7,16 +7,5 @@ services:
       - "4533:4533"
     restart: always
     volumes:
-      - "./data:/data:rw"
-      - "./music:/music:rw"
-
-  filebrowser:
-    image: filebrowser/filebrowser:latest
-    container_name: filebrowser
-    user: "1000:1000"
-    restart: always
-    ports:
-      - "9090:80"
-    volumes:
-      - "./music:/srv"              # FileBrowser sees music folder
-      - "./filebrowser_db:/config"  # DB inside navidrome folder
+      - ./data:/data
+      - ../filebrowser/media/music:/music:ro # Reaching into the filebrowser/media directory:
